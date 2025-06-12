@@ -1,0 +1,49 @@
+.body {
+  background-color: #f89404;
+}
+
+.left {
+  cursor: pointer;
+  color: #000;
+  transition: all 0.5s;
+  background: linear-gradient(to right, #ff8e01, #ffd400);
+  border: 1px solid #000;
+  width: 3rem;
+  height: 3rem;
+  font-size: 16pt;
+}
+
+.menu-containter {
+  height: 8rem;
+  width: 80%;
+  cursor: pointer;
+  transition: all 0.5s;
+  background: linear-gradient(to right, #ff8e01, #ffd400);
+  border: 1px solid #000;
+}
+
+.menu-containter:hover,
+.menu-containter:focus,
+.left:hover,
+.left:focus {
+  transform: scale(1.2);
+}
+
+.text-description {
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 20pt;
+  color: #fff;
+}
+
+.icon:hover {
+  filter: brightness(0.4);
+}
+
+.fav {
+  color: red;
+}

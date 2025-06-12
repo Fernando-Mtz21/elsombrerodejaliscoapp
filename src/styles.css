@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  background-color: #f89404;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f89404 !important;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 0;
+}
+
+.p-card .p-card-content {
+  padding: 0;
+}
