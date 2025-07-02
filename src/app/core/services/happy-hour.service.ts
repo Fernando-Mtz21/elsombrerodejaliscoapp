@@ -28,18 +28,15 @@ export class HappyHourService implements OnInit, OnDestroy {
   private pad = (n: number) => n.toString().padStart(2, '0');
 
   ngOnInit(): void {
-    console.log('ONINIT HH');
     this.isHappyHour(new Date());
 
     interval(1000)
       .pipe(takeUntil(this.stop$))
       .subscribe(() => {
-        console.log('INTERVAL');
         let elapsedTime: string = this.empty;
 
         if (!this.isHappyHour(new Date())) {
           elapsedTime = this.getTimeDifference(this._nextHappyHour, new Date());
-          console.log('TIME ELAPSED', elapsedTime);
         }
 
         this._timeForHappyHour.next(elapsedTime);
@@ -49,7 +46,6 @@ export class HappyHourService implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.stop$.next();
     this.stop$.complete();
-    console.log('ONDESTROY HH');
   }
 
   private getTimeDifference(start: Date, end: Date): string {
@@ -60,24 +56,6 @@ export class HappyHourService implements OnInit, OnDestroy {
     const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
 
     return `${this.pad(hours)}:${this.pad(minutes)}:${this.pad(seconds)}`;
-  }
-
-  public isHappyHourv1(currentDate: Date): boolean {
-    // L-J 2-7pm
-    const day: number = currentDate.getDay();
-
-    if (day === 0 || day > 4) {
-      return false;
-    }
-
-    const hour: number = currentDate.getHours();
-
-    if (hour < 14 || hour >= 19) {
-      return false;
-    }
-
-    // Happy Hour
-    return true;
   }
 
   public isHappyHour(currentDate: Date) {
