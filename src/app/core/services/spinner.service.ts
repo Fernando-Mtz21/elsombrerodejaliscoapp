@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class SpinnerService {
   private isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
+    true
   );
 
   public isLoading$: Observable<boolean> = this.isLoading.asObservable();

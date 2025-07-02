@@ -2,10 +2,12 @@
 <!-- Here code for spinner -->
 <div class="content">
   <div class="loading-content">
-    <img class="logo-spin" src="assets/img/logo.png" />
+    <div class="img-cont"></div>
+    <!-- <img class="logo-spin" src="assets/img/logo.png" /> -->
     <p class="loading-text">Loading...</p>
   </div>
 </div>
-} @else {
-<router-outlet></router-outlet>
 }
+<div [ngClass]="{ 'd-none': this.isLoading }">
+  <router-outlet></router-outlet>
+</div>

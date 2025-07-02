@@ -20,17 +20,17 @@ export class ErrorHandlingInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     // Here it is possible to add headers in the request.
 
-    this.spinnerService.show();
+    // this.spinnerService.show();
 
     return next.handle(req).pipe(
       tap((event: HttpEvent<any>) => {
         // Here the logic in case of success.
         if (event instanceof HttpResponse) {
-          this.spinnerService.hide();
+          // this.spinnerService.hide();
         }
       }),
       catchError((error: HttpErrorResponse) => {
-        this.spinnerService.hide();
+        // this.spinnerService.hide();
         // Here the logic in case of error.
         return of();
       })

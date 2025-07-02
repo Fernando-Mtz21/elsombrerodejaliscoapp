@@ -15,7 +15,7 @@ import { SpinnerService } from '@services/spinner.service';
 })
 export class AppComponent implements OnInit {
   public title: string = 'angular-base-template';
-  protected isLoading: boolean = false;
+  protected isLoading: boolean = true;
   private languages: string[] = ['en', 'es'];
 
   constructor(
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   public ngOnInit(): void {
     this.spinnerService.isLoading$.subscribe((value: boolean) => {
       this.isLoading = value;
-      this.changeDetectionRef.markForCheck();
+      this.changeDetectionRef.detectChanges();
     });
 
     const language: string = navigator.language || 'en';
