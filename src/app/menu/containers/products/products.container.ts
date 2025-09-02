@@ -9,24 +9,30 @@ import { FavService } from '@services/fav.service';
 })
 export class ProductsContainer {
   protected products: any[] = [];
+  protected categories: any[] = [];
   protected visible: boolean = false;
   protected selectedProduct: any;
   protected isFav: boolean = false;
 
   constructor(private router: Router, private favService: FavService) {
     const navigation = this.router.getCurrentNavigation();
-    const products = navigation?.extras.state as { items: any[] };
+    const products = navigation?.extras.state as {
+      products: any[];
+      categories: any[];
+    };
 
     if (!products) {
       this.goBack();
     }
 
-    console.log(products);
-    this.products = products?.items || [];
+    this.products = products?.products || [];
+    this.categories = products?.categories || [];
   }
 
   protected goBack(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/Categories'], {
+      state: { categories: this.categories },
+    });
   }
 
   protected seeProduct(item: any) {

@@ -8,9 +8,10 @@ import { MainContainer } from './containers/main/main.container';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { ProductsContainer } from './containers/products/products.container';
+import { CategoriesContainer } from './containers/categories/categories.container';
 
 @NgModule({
-  declarations: [MainContainer, ProductsContainer],
+  declarations: [MainContainer, ProductsContainer, CategoriesContainer],
   imports: [
     CardModule,
     DialogModule,

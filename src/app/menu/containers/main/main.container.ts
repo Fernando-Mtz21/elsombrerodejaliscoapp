@@ -67,7 +67,7 @@ export class MainContainer implements OnInit, OnDestroy {
     this.hhservice.ngOnDestroy();
   }
 
-  seeProducts(items: any[]): void {
-    this.router.navigate(['/Products'], { state: { items } });
+  seeProducts(categories: any[]): void {
+    this.router.navigate(['/Categories'], { state: { categories } });
   }
 }
