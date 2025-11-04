@@ -23,11 +23,9 @@ export class MainContainer implements OnInit, OnDestroy {
   hoursForHh: string = '00';
   minutesForHh: string = '00';
   secondsForHh: string = '00';
-
   timeForHH: string = '00:00:00';
-
+  left: string = 'HAPPY HOUR LEFT';
   isItHH: boolean = false;
-
   nextHH: Date | null = null;
 
   intervalId: any;
@@ -42,18 +40,22 @@ export class MainContainer implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.spinnerService.show();
-
     this.hhservice.ngOnInit();
-
     this.hhservice.timeForHappyHour.subscribe((value) => {
+     if (value === '00:00:00') {
+      this.timeForHH = '¡Happy Hour!';
+      this.left = '';
+    } else {
       this.timeForHH = value;
-      this.cdr.detectChanges();
+      this.left = 'HAPPY HOUR LEFT';
+    }
+    this.cdr.detectChanges();
     });
 
     this.menuService.getMenu().subscribe({
       next: (menu) => {
         this.menu = menu;
-        console.log('Mneu: ', this.menu);
+        console.log('Menu: ', this.menu);
       },
       complete: () => {
         timer(1000).subscribe(() => {
@@ -70,4 +72,13 @@ export class MainContainer implements OnInit, OnDestroy {
   seeProducts(categories: any[]): void {
     this.router.navigate(['/Categories'], { state: { categories } });
   }
+  //Cambiar por standard de Carrusel EX: images/carrusel/carrusel1.jpg
+    images: string[] = [
+    'https://www.elsombrerodejalisco.com/images/camara/cucumber.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/lime.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/mango.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/strawberry.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/sangria.jpg',
+  ];
+
 }

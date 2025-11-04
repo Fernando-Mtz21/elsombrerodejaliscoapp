@@ -1,28 +1,16 @@
 <div class="body pt-4">
-  <div class="hh-bg d-flex justify-content-center align-items-center row">
-    <div class="hh-bg rounded row col-12 m-2 p-1">
-      <div
-        class="img-hh col-4 d-flex justify-content-center align-items-center"
-      >
-        <div
-          class="img-container d-flex justify-content-center align-items-center"
-          style="background-color: #e0e42c; border-radius: 50%"
-        >
-          <img src="assets/img/hh.png" class="img-fluid" style="height: 20vh" />
-        </div>
-      </div>
-      <div class="hh-bg cont-hh col-8 row">
-        <div class="hh-bg col-12 d-flex justify-content-end align-items-center">
-          <h3>
-            <b style="font-size: 30pt">{{this.timeForHH}}</b>
-          </h3>
-        </div>
-        <div class="hh-bg col-12 d-flex justify-content-end align-items-center">
-          <h3><b style="font-size: 22pt">HAPPY HOUR</b></h3>
-        </div>
+<p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true">
+  <ng-template pTemplate="item" let-image>
+    <div class="image-container">
+      <img [src]="image" alt="Imagen" class="background-image" />
+      <div class="overlay-text">
+      <h1 class="big blink">{{ timeForHH }}</h1>
+      <h3 class="small">{{ left }}</h3>
       </div>
     </div>
-  </div>
+  </ng-template>
+</p-carousel>
+
   <div class="d-flex justify-content-center align-items-center row">
     @for (item of this.menu; track $index) {
     <div
@@ -30,16 +18,15 @@
       (click)="this.seeProducts(item.categories)"
     >
       <div
-        class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded"
-        style="
-          background-image: url('https://img.freepik.com/foto-gratis/vista-superior-mesa-llena-comida_23-2149209253.jpg');
-        "
+        class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded background-button-image"
       >
-        <h1 class="img-text">{{item.name}}</h1>
+        <h1 class="img-text">{{item.name}} {{item.url_img}}</h1>
       </div>
     </div>
     <!-- <div>{{item.name}}</div> -->
     <!-- <p-card [header]="item.name"> </p-card> -->
     }
   </div>
+
+
 </div>

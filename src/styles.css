@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-  background-color: #f89404;
+   background-color: #FAF3E0; 
+
 }
 
 body {
-  overflow-x: hidden;
-  background-color: #f89404 !important;
+   overflow-x: hidden;
+   background-color: #FAF3E0; 
+
 }
 
 .p-dialog .p-dialog-content {

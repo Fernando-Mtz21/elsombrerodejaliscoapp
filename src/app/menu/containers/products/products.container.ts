@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FavService } from '@services/fav.service';
+import { count } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -12,13 +13,14 @@ export class ProductsContainer {
   protected categories: any[] = [];
   protected visible: boolean = false;
   protected selectedProduct: any;
+  protected images: any[] = [];
   protected isFav: boolean = false;
 
   constructor(private router: Router, private favService: FavService) {
     const navigation = this.router.getCurrentNavigation();
     const products = navigation?.extras.state as {
-      products: any[];
-      categories: any[];
+    products: any[];
+    categories: any[];
     };
 
     if (!products) {
@@ -27,29 +29,33 @@ export class ProductsContainer {
 
     this.products = products?.products || [];
     this.categories = products?.categories || [];
-  }
-
-  protected goBack(): void {
-    this.router.navigate(['/Categories'], {
-      state: { categories: this.categories },
+    this.images = Array.from({ length: 5 }, () => {
+    const randomIndex = Math.floor(Math.random() * this.products.length);
+    return this.products[randomIndex];
     });
-  }
+    }
 
-  protected seeProduct(item: any) {
+    protected goBack(): void {
+    this.router.navigate(['/Categories'], {
+    state: { categories: this.categories },
+    });
+    }
+
+    protected seeProduct(item: any) {
     this.visible = true;
-
     this.selectedProduct = item;
-
     this.isFav = this.favService.isItemFav(this.selectedProduct.idProduct);
-  }
+    }
 
-  protected toggleFav(): void {
+    protected toggleFav(): void {
     console.log('SELECTED PROD: ', this.selectedProduct);
     this.favService.toggleFav(this.selectedProduct.idProduct);
     this.isFav = !this.isFav;
-  }
+    }
 
-  protected closeModal(): void {
+    protected closeModal(): void {
     this.visible = false;
-  }
+    }
+
+
 }

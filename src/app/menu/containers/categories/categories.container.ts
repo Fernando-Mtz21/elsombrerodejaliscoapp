@@ -17,6 +17,7 @@ export class CategoriesContainer {
     }
 
     this.categories = categories?.categories || [];
+    console.log(this.categories)
   }
 
   protected seeProduct(products: any) {

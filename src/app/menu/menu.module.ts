@@ -9,6 +9,7 @@ import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { ProductsContainer } from './containers/products/products.container';
 import { CategoriesContainer } from './containers/categories/categories.container';
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   declarations: [MainContainer, ProductsContainer, CategoriesContainer],
@@ -16,6 +17,7 @@ import { CategoriesContainer } from './containers/categories/categories.containe
     CardModule,
     DialogModule,
     CommonModule,
+    CarouselModule,
     MenuRoutingModule,
     TranslateModule.forChild({
       loader: {
