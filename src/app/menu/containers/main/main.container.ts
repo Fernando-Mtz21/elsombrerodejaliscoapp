@@ -80,5 +80,4 @@ export class MainContainer implements OnInit, OnDestroy {
     'https://www.elsombrerodejalisco.com/images/camara/strawberry.jpg',
     'https://www.elsombrerodejalisco.com/images/camara/sangria.jpg',
   ];
-
 }
