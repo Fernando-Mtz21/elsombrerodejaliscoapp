@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 import { MenuRoutingModule } from './menu-routing.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
@@ -14,6 +15,7 @@ import { CarouselModule } from 'primeng/carousel';
 @NgModule({
   declarations: [MainContainer, ProductsContainer, CategoriesContainer],
   imports: [
+    SharedModule,
     CardModule,
     DialogModule,
     CommonModule,
@@ -30,4 +32,4 @@ import { CarouselModule } from 'primeng/carousel';
     }),
   ],
 })
-export class MenuModule {}
+export class MenuModule { }
