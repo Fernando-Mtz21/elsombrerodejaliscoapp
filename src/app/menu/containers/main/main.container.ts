@@ -70,6 +70,13 @@ export class MainContainer implements OnInit, OnDestroy {
   }
 
   seeProducts(categories: any[]): void {
+    const onlyOneCategory = categories?.length == 1;
+
+    if(onlyOneCategory){
+      this.router.navigate(['/Products'], {state: {products: categories[0].products}})
+      return;
+    }
+
     this.router.navigate(['/Categories'], { state: { categories } });
   }
   //Cambiar por standard de Carrusel EX: images/carrusel/carrusel1.jpg
