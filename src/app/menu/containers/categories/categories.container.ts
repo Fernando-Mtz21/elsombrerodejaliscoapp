@@ -12,7 +12,7 @@ export class CategoriesContainer {
   constructor(private router: Router) {
     const navigation = this.router.getCurrentNavigation();
     const categories = navigation?.extras.state as { categories: any[] };
-    if (!categories) {
+    if (!categories?.categories?.length) {
       this.goBack();
     }
 

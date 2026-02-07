@@ -1,25 +1,23 @@
 <div class="body pt-4">
-<p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true">
-  <ng-template pTemplate="item" let-image>
-    <div class="image-container">
-      <img [src]="image" alt="Imagen" class="background-image" />
-      <div class="overlay-text">
-      <h1 class="big blink">{{ timeForHH }}</h1>
-      <h3 class="small">{{ left }}</h3>
+  <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true">
+    <ng-template pTemplate="item" let-image>
+      <div class="image-container">
+        <img [src]="image" alt="Imagen" class="background-image" />
+        <div class="overlay-text">
+          <h1 class="big blink">{{ timeForHH }}</h1>
+          <h3 class="small">{{ left }}</h3>
+        </div>
       </div>
-    </div>
-  </ng-template>
-</p-carousel>
+    </ng-template>
+  </p-carousel>
+
+  <!-- <app-navbar></app-navbar> -->
 
   <div class="d-flex justify-content-center align-items-center row">
     @for (item of this.menu; track $index) {
-    <div
-      class="img-container col-12 m-2 p-1"
-      (click)="this.seeProducts(item.categories)"
-    >
+    <div class="img-container col-12 m-2 p-1" (click)="this.seeProducts(item.categories)">
       <div
-        class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded background-button-image"
-      >
+        class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded background-button-image">
         <h1 class="img-text">{{item.name}} {{item.url_img}}</h1>
       </div>
     </div>
