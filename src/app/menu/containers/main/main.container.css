@@ -11,19 +11,12 @@
 
 .body {
   background-color: #FAF3E0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #2B2B2B;
   padding-bottom: 80px;
   /* Space for sticky navbar */
 }
 
-.hh-bg {
-  background-color: #3CA86B;
-  border-radius: 12px;
-  padding: 10px;
-  color: white;
-  text-align: center;
-}
 
 .img-hover-zoom {
   height: 100%;
@@ -53,7 +46,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -61,16 +53,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
 }
 
 
 .background-button-image {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url('https://img.freepik.com/foto-gratis/vista-superior-mesa-llena-comida_23-2149209253.jpg');
-  background-size: cover;
-  background-position: center;
+background-color: #ef9153;
+border-radius: 16px !important;
 }
 
 
@@ -86,7 +74,6 @@
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
-  border-radius: 16px;
   text-align: center;
   font-weight: 600;
   font-size: 1.2rem;
@@ -107,7 +94,6 @@
 
 .button:hover {
   background-color: #C0392B;
-
 }
 
 .overlay-text h3 {
@@ -120,30 +106,147 @@
   animation: fadeUp 0.6s ease forwards;
 }
 
-.overlay-text .big {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  background: linear-gradient(45deg, #E76F51, #FFD166);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+:host ::ng-deep .p-carousel-indicators .p-carousel-indicator button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.overlay-text .small {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  opacity: 0.9;
-}
-
-:host ::ng-deep .p-carousel-items-content {
-  overflow: hidden;
-  width: 100%;
-  border-radius: 16px;
+:host ::ng-deep .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: #f19c63; 
+  transform: scale(1.4);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
 
 .blink {
   animation: blink 2.5s infinite;
+}
+
+.hero {
+  position: relative;
+  height: 100%; 
+  width: 100%;
+  background-image: url('https://elsombrerodejalisco.com/images/hero_1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.content {
+  position: relative;
+  color: white;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  background-color: #6366f1;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.hh-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://i.ebayimg.com/images/g/xPgAAOSwZB9aQpJd/s-l1200.jpg'); 
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+}
+
+.hh-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 0, 150, 0.4), rgba(0, 204, 255, 0.4));
+  backdrop-filter: blur(2px); 
+}
+
+.hh-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.hh-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hh-countdown {
+  font-size: 4rem;
+  margin: 10px 0;
+  font-weight: 800;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.hh-subtext {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.blink {
+  animation: pulse-animation 1.5s infinite;
+}
+
+.btn-action {
+  flex: 1; 
+  max-width: 200px; 
+  padding: 20px 10px; 
+  border-radius: 13px; 
+  background: #ef9153; 
+  color: white;
+  border-color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 @keyframes blink {

@@ -43,44 +43,33 @@
   color: #2B2B2B; 
 }
 
-.hh-bg {
-  background-color: #3CA86B;
-  border-radius: 12px;
-  padding: 10px;
-  color: white;
-  text-align: center;
-}
 
 .left {
   cursor: pointer;
   color: #fff;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #ff8e01, #ffd400);
-  border: none;
-  border-radius: 0.8rem;
+  background-color: #ef9153;
+  border-radius: 16px !important;  border: none;
   width: 3rem;
   height: 3rem;
   font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 .left:hover,
 .left:focus {
   transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .menu-containter {
   height: 8rem;
   width: 80%;
   cursor: pointer;
+  color: #fff;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #ff8e01, #ffd400);
-  border: none;
-  border-radius: 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  background-color: #ef9153;
+  border-radius: 16px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,13 +77,12 @@
 .menu-containter h1 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #222;
   margin: 0;
 }
 .menu-containter:hover,
 .menu-containter:focus {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+
 }
 :host ::ng-deep .p-carousel-items-content {
   overflow: hidden;

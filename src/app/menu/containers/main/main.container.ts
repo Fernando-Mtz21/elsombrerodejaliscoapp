@@ -19,13 +19,12 @@ import { timer } from 'rxjs';
 })
 export class MainContainer implements OnInit, OnDestroy {
   menu: any[] = [];
-
+  labels: any = {}; 
   hoursForHh: string = '00';
   minutesForHh: string = '00';
   secondsForHh: string = '00';
   timeForHH: string = '00:00:00';
   left: string = 'HAPPY HOUR LEFT';
-  isItHH: boolean = false;
   nextHH: Date | null = null;
 
   intervalId: any;
@@ -39,6 +38,14 @@ export class MainContainer implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+ this.menuService.getLabels().subscribe({
+    next: (res) => {
+      this.labels = res;
+    },
+    error: (err) => console.error(err)
+  });
+
+
     this.spinnerService.show();
     this.hhservice.ngOnInit();
     this.hhservice.timeForHappyHour.subscribe((value) => {
@@ -79,12 +86,12 @@ export class MainContainer implements OnInit, OnDestroy {
 
     this.router.navigate(['/Categories'], { state: { categories } });
   }
-  //Cambiar por standard de Carrusel EX: images/carrusel/carrusel1.jpg
+
     images: string[] = [
-    'https://www.elsombrerodejalisco.com/images/camara/cucumber.jpg',
-    'https://www.elsombrerodejalisco.com/images/camara/lime.jpg',
-    'https://www.elsombrerodejalisco.com/images/camara/mango.jpg',
-    'https://www.elsombrerodejalisco.com/images/camara/strawberry.jpg',
-    'https://www.elsombrerodejalisco.com/images/camara/sangria.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/carrusel/1.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/carrusel/2.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/carrusel/3.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/carrusel/4.jpg',
+    'https://www.elsombrerodejalisco.com/images/camara/carrusel/5.jpg',
   ];
 }

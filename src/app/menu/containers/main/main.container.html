@@ -1,30 +1,48 @@
 <div class="body pt-4">
-  <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true">
+
+  <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [showNavigators]="false" [autoplayInterval]="5000">
     <ng-template pTemplate="item" let-image>
       <div class="image-container">
         <img [src]="image" alt="Imagen" class="background-image" />
-        <div class="overlay-text">
-          <h1 class="big blink">{{ timeForHH }}</h1>
-          <h3 class="small">{{ left }}</h3>
-        </div>
       </div>
     </ng-template>
   </p-carousel>
 
-  <!-- <app-navbar></app-navbar> -->
+  <div class="d-flex justify-content-center gap-3 my-4 px-3">
+    <button class="btn-action">BOOK A TABLE</button>
+    <button class="btn-action">BAR</button>
+  </div>
 
-  <div class="d-flex justify-content-center align-items-center row">
-    @for (item of this.menu; track $index) {
-    <div class="img-container col-12 m-2 p-1" (click)="this.seeProducts(item.categories)">
-      <div
-        class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded background-button-image">
-        <h1 class="img-text">{{item.name}} {{item.url_img}}</h1>
+  <div class="hh-card" >
+    <div class="hh-overlay"></div>
+    <div class="hh-content">
+      <div class="hh-timer-wrapper">
+        <h1 class="hh-countdown blink">{{ timeForHH }}</h1>
+        <h3 class="hh-subtext">{{ left }}</h3>
       </div>
     </div>
-    <!-- <div>{{item.name}}</div> -->
-    <!-- <p-card [header]="item.name"> </p-card> -->
+  </div>
+
+  <div class="d-flex justify-content-center align-items-center row mt-4">
+    @for (item of this.menu; track $index) {
+    <div class="img-container col-12 m-2 p-1" (click)="this.seeProducts(item.categories)">
+      <div class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded background-button-image">
+        <h1 class="img-text">{{item.name}}</h1>
+      </div>
+    </div>
     }
   </div>
 
+  <br>
 
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="title">{{ labels.message2 }}</h1>
+      <p class="description">
+        {{ labels.message1 }}
+      </p>
+      <button class="btn-primary">CALL US</button>
+    </div>
+  </div>
 </div>

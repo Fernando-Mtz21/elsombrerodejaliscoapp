@@ -9,7 +9,7 @@
   cursor: pointer;
   color: #fff;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #ff8e01, #ffd400);
+ background-color: #ef9153;
   border: none;
   border-radius: 0.8rem;
   width: 3rem;
@@ -18,12 +18,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 .left:hover,
 .left:focus {
   transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .menu-containter {
@@ -31,10 +29,9 @@
   width: 80%;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #ff8e01, #ffd400);
-  border: none;
-  border-radius: 1rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  background-color: #ef9153;
+  color: #ffffff;
+  border-radius: 16px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,13 +39,12 @@
 .menu-containter h1 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #222;
+  color: #ffffff;
   margin: 0;
 }
 .menu-containter:hover,
 .menu-containter:focus {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -71,4 +67,37 @@
 
 .fav {
   color: red;
+}
+
+.product-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  padding: 20px;
+}
+
+.image-container h1 {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+  margin: 0;
+}
+
+.image-container div:not(:last-child) {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
 }

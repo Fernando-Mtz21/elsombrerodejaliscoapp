@@ -19,4 +19,11 @@ export class MenuService {
       this.httpOptions
     );
   }
+
+   public getLabels(): Observable<any> {
+    return this.http.get<any>(
+      `${environment.apiBaseUrl}/api/label`,
+      this.httpOptions
+    );
+  }
 }
