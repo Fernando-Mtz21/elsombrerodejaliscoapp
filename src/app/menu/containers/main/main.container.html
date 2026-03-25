@@ -1,19 +1,5 @@
 <div class="body pt-4">
-
-  <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [showNavigators]="false" [autoplayInterval]="5000">
-    <ng-template pTemplate="item" let-image>
-      <div class="image-container">
-        <img [src]="image" alt="Imagen" class="background-image" />
-      </div>
-    </ng-template>
-  </p-carousel>
-
-  <div class="d-flex justify-content-center gap-3 my-4 px-3">
-    <button class="btn-action">BOOK A TABLE</button>
-    <button class="btn-action">BAR</button>
-  </div>
-
-  <div class="hh-card" >
+  <div class="hh-card">
     <div class="hh-overlay"></div>
     <div class="hh-content">
       <div class="hh-timer-wrapper">
@@ -23,13 +9,32 @@
     </div>
   </div>
 
+  <div class="d-flex justify-content-center gap-3 my-4 px-3">
+    <button class="btn-action">BOOK A TABLE</button>
+    <button class="btn-action">BAR</button>
+  </div>
+
+  <p-carousel 
+    [value]="images" 
+    [numVisible]="1" 
+    [numScroll]="1" 
+    [circular]="true" 
+    [showNavigators]="false" 
+    [autoplayInterval]="5000">
+    <ng-template pTemplate="item" let-image>
+      <div class="image-container">
+        <img [src]="image" alt="Imagen" class="background-image" />
+      </div>
+    </ng-template>
+  </p-carousel>
+
   <div class="d-flex justify-content-center align-items-center row mt-4">
     @for (item of this.menu; track $index) {
-    <div class="img-container col-12 m-2 p-1" (click)="this.seeProducts(item.categories)">
-      <div class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded background-button-image">
-        <h1 class="img-text">{{item.name}}</h1>
+      <div class="img-container col-12 m-2 p-1" (click)="this.seeProducts(item.categories)">
+        <div class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded background-button-image">
+          <h1 class="img-text">{{ item.name }}</h1>
+        </div>
       </div>
-    </div>
     }
   </div>
 
