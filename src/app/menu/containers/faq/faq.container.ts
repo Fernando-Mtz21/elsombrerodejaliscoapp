@@ -11,11 +11,6 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './faq.container.css'
 })
 export class FaqContainer {
-constructor(private router:Router ){
 
-}
-  protected goBack(): void {
-    this.router.navigate(['/']);
-  }
 }
 
