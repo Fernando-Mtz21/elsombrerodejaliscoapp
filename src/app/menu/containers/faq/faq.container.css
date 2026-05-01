@@ -1,0 +1,18 @@
+.left {
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+ background-color: #ef9153;
+  border: none;
+  border-radius: 0.8rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left:hover,
+.left:focus {
+  transform: scale(1.1);
+}

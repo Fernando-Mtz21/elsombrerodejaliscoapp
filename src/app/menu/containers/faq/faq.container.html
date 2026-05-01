@@ -1,0 +1,34 @@
+<div class="body pt-4">
+  <div class="d-flex justify-content-start align-items-center w-100">
+    <button class="left ms-3" (click)="this.goBack()">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+  </div>
+
+  <div class="mb-4 p-8 flex items-center justify-center">
+    <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+        <!-- Imagen superior: nota el ="header" -->
+        <ng-template pTemplate="header">
+            <img alt="Card" class="w-full block" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+        </ng-template>
+
+        <!-- Títulos -->
+        <ng-template pTemplate="title"> Producto Premium </ng-template>
+        <ng-template pTemplate="subtitle"> Disponible ahora </ng-template>
+        
+        <!-- Cuerpo -->
+        <p class="m-0">
+            Este es un ejemplo de cómo se estructura la información de manera limpia.
+            Ideal para catálogos o perfiles de usuario.
+        </p>
+
+        <!-- Acciones -->
+        <ng-template pTemplate="footer">
+            <div class="flex gap-3">
+                <p-button label="Descartar" severity="secondary" [outlined]="true" styleClass="w-full" />
+                <p-button label="Confirmar" styleClass="w-full" />
+            </div>
+        </ng-template>
+    </p-card>
+  </div>
+</div>

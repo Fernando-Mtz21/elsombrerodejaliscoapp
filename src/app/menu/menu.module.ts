@@ -11,7 +11,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ProductsContainer } from './containers/products/products.container';
 import { CategoriesContainer } from './containers/categories/categories.container';
 import { CarouselModule } from 'primeng/carousel';
-
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [MainContainer, ProductsContainer, CategoriesContainer],
   imports: [
