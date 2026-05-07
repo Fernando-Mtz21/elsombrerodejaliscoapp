@@ -26,4 +26,11 @@ export class MenuService {
       this.httpOptions
     );
   }
+
+     public getFaqs(): Observable<any> {
+    return this.http.get<any>(
+      `${environment.apiBaseUrl}/api/faqs.php`,
+      this.httpOptions
+    );
+  }
 }

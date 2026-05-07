@@ -1,74 +1,22 @@
 <div class="body pt-4">
-
  <div class="p-2">
-  <p-card styleClass="mx-2 mt-2 border-round-2xl shadow-2 overflow-hidden">
+   @for (item of this.faqs; track $index) {
+<p-card styleClass="mx-2 mt-2 border-round-2xl shadow-2 overflow-hidden">
     <ng-template pTemplate="header">
       <img 
-        src="https://elsombrerodejalisco.com/images/hero_1.jpeg" 
-        alt="Imagen" 
-        class="w-full h-40 object-cover"
+        src={{item.url_img}}
       />
     </ng-template>
     <div class="p-4">
-      <h3 class="m-0 mb-2">About Us</h3>
+      <h3 class="m-0 mb-2">{{ item.title }}</h3>
       <p class="m-0 text-600">
-        Descripción breve del paquete o producto. Algo claro y directo.
+        {{ item.description }}
       </p>
     </div>
   </p-card>
+  <br>
+    }
+  
 </div>
 
- <div class="p-2">
-  <p-card styleClass="mx-2 mt-2 border-round-2xl shadow-2 overflow-hidden">
-    <ng-template pTemplate="header">
-      <img 
-        src="https://elsombrerodejalisco.com/images/hero_1.jpeg" 
-        alt="Imagen" 
-        class="w-full h-40 object-cover"
-      />
-    </ng-template>
-    <div class="p-4">
-      <h3 class="m-0 mb-2">About Us</h3>
-      <p class="m-0 text-600">
-        Descripción breve del paquete o producto. Algo claro y directo.
-      </p>
-    </div>
-  </p-card>
-</div>
-
- <div class="p-2">
-  <p-card styleClass="mx-2 mt-2 border-round-2xl shadow-2 overflow-hidden">
-    <ng-template pTemplate="header">
-      <img 
-        src="https://elsombrerodejalisco.com/images/hero_1.jpeg" 
-        alt="Imagen" 
-        class="w-full h-40 object-cover"
-      />
-    </ng-template>
-    <div class="p-4">
-      <h3 class="m-0 mb-2">About Us</h3>
-      <p class="m-0 text-600">
-        Descripción breve del paquete o producto. Algo claro y directo.
-      </p>
-    </div>
-  </p-card>
-</div>
-
- <div class="p-2">
-  <p-card styleClass="mx-2 mt-2 border-round-2xl shadow-2 overflow-hidden">
-    <ng-template pTemplate="header">
-      <img 
-        src="https://elsombrerodejalisco.com/images/hero_1.jpeg" 
-        alt="Imagen" 
-        class="w-full h-40 object-cover"
-      />
-    </ng-template>
-    <div class="p-4">
-      <h3 class="m-0 mb-2">About Us</h3>
-      <p class="m-0 text-600">
-        Descripción breve del paquete o producto. Algo claro y directo.
-      </p>
-    </div>
-  </p-card>
-</div>
 </div>
