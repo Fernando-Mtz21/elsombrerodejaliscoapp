@@ -36,3 +36,7 @@
   font-size: 0.75rem;
   font-weight: 500;
 }
+
+.nav-item.active {
+  color: #C0392B;
+}

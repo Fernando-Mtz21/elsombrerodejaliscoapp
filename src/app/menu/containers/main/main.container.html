@@ -1,5 +1,5 @@
 <div class="body pt-4">
-  <div class="hh-card">
+  <div class="hh-card" (click)="goToMargaritas()" style="cursor: pointer;">
     <div class="hh-overlay"></div>
     <div class="hh-content">
       <div class="hh-timer-wrapper">
@@ -11,7 +11,7 @@
 
   <div class="d-flex justify-content-center gap-3 my-4 px-3">
     <button class="btn-action">BOOK A TABLE</button>
-    <button class="btn-action">BAR</button>
+    <button class="btn-action" (click)="goToBar()">BAR</button>
   </div>
 
   <p-carousel 

@@ -2,14 +2,20 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class FavService {
-  private localStorageName: string = '';
+  private localStorageName: string = 'fav_products';
 
   private getCurrentFavList(): number[] {
     const current: string = localStorage.getItem(this.localStorageName) ?? '';
 
+    if (!current) return [];
+
     const numberArray: number[] = current.split(',').map(Number);
 
     return numberArray;
+  }
+
+  public getFavIds(): number[] {
+    return this.getCurrentFavList();
   }
 
   public toggleFav(idProduct: number): void {

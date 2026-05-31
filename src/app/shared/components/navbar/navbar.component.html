@@ -1,14 +1,14 @@
 <div class="navbar-container d-flex justify-content-around align-items-center">
-  <div routerLink="/" class="nav-item">
+  <div routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
     <i class="bi bi-house-door-fill"></i>
     <span>Home</span>
   </div>
-  <div class="nav-item">
+  <div routerLink="/Favorites" routerLinkActive="active" class="nav-item">
     <i class="bi bi-heart-fill"></i>
     <span>Favorites</span>
   </div>
-  <div routerLink="/Faq" class="nav-item">
-<i class="bi bi-question-circle-fill"></i>
-    <span >FAQ</span>
+  <div routerLink="/Faq" routerLinkActive="active" class="nav-item">
+    <i class="bi bi-question-circle-fill"></i>
+    <span>FAQ</span>
   </div>
 </div>

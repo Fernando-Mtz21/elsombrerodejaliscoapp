@@ -87,6 +87,29 @@ export class MainContainer implements OnInit, OnDestroy {
     this.router.navigate(['/Categories'], { state: { categories } });
   }
 
+  goToBar(): void {
+    const barMenu = this.menu.find((item: any) =>
+      item.name?.includes('+21') ||
+      item.name?.toLowerCase().includes('drink')
+    );
+    if (barMenu) this.seeProducts(barMenu.categories);
+  }
+
+  goToMargaritas(): void {
+    const barMenu = this.menu.find((item: any) =>
+      item.name?.includes('+21') ||
+      item.name?.toLowerCase().includes('drink')
+    );
+    const margaritasCategory = barMenu?.categories?.find((cat: any) =>
+      cat.name?.toLowerCase().includes('margarita')
+    );
+    if (margaritasCategory) {
+      this.router.navigate(['/Products'], {
+        state: { products: margaritasCategory.products }
+      });
+    }
+  }
+
     images: string[] = [
     'https://www.elsombrerodejalisco.com/images/camara/carrusel/1.jpg',
     'https://www.elsombrerodejalisco.com/images/camara/carrusel/2.jpg',

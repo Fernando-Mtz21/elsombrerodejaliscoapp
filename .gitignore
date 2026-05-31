@@ -1,13 +1,17 @@
 # Angular cache
 .angular/
 .angular/**
+.claude/
+android/
+ios/
+*.docx
 
 # Alternativa fuerte
 */.angular/
 */.angular/**
 
 # Node Modules
-/node_modules/
+node_modules/
 
 # Build output
 dist/

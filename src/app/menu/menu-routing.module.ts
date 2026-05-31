@@ -4,6 +4,7 @@ import { MainContainer } from './containers/main/main.container';
 import { ProductsContainer } from './containers/products/products.container';
 import { CategoriesContainer } from './containers/categories/categories.container';
 import { FaqContainer } from './containers/faq/faq.container';
+import { FavoritesContainer } from './containers/favorites/favorites.container';
 
 const routes: Routes = [
   {
@@ -18,9 +19,13 @@ const routes: Routes = [
     path: 'Products',
     component: ProductsContainer,
   },
-    {
+  {
     path: 'Faq',
     component: FaqContainer,
+  },
+  {
+    path: 'Favorites',
+    component: FavoritesContainer,
   },
 ];
 
