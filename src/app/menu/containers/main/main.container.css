@@ -43,11 +43,10 @@
 
 .image-container {
   position: relative;
-  width: 90%;           
-  margin: 1px auto; 
-  height: 300px;      
-  overflow: hidden;      
-  border-radius: 16px;   
+  width: 100%;           
+  margin: 0px auto; 
+  height: 500px;      
+  overflow: hidden;         
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   display: block; 
   z-index: 1;
@@ -79,7 +78,6 @@ border-radius: 16px !important;
   background-color: #f19c63; 
   transform: scale(1.4);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-  border-radius: 10px !important;
 }
 
 .blink {
@@ -88,7 +86,7 @@ border-radius: 16px !important;
 
 .hero {
   position: relative;
-  height: 100%; 
+  height: 50vh ;
   width: 100%;
   background-image: url('https://elsombrerodejalisco.com/images/hero_1.jpeg');
   background-size: cover;
@@ -138,7 +136,7 @@ border-radius: 16px !important;
   position: relative;
   width: 100%;
   max-width: 400px;
-  height: 250px;
+  height: 400px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -147,7 +145,7 @@ border-radius: 16px !important;
   background-size: cover;
   background-position: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  margin: 20px auto;
+  margin: 0px auto;
 }
 
 .hh-overlay {
@@ -168,8 +166,6 @@ border-radius: 16px !important;
   font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-
-
 .hh-countdown {
   font-size: 4rem;
   margin: 10px 0;
@@ -185,21 +181,6 @@ border-radius: 16px !important;
 
 .blink {
   animation: pulse-animation 1.5s infinite;
-}
-
-.btn-action {
-  flex: 1; 
-  max-width: 200px; 
-  padding: 20px 10px; 
-  border-radius: 13px; 
-  background: #ef9153; 
-  color: white;
-  border-color: white;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 @keyframes fadeUp {

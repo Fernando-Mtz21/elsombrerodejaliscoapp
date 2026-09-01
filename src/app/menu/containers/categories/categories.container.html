@@ -17,14 +17,23 @@
   </div>
 </div>
 
-  <div class="d-flex justify-content-center align-items-center row pb-6">
-    @for (item of this.categories; track $index) {
-    <div
-      class="menu-containter col-12 m-2 p-1 d-flex justify-content-center align-items-center rounded"
-      (click)="this.seeProduct(item.products)"
-    >
-      <h1>{{item.name}}</h1>
-    </div>
-    }
-  </div>
+<div class="row justify-content-center g-3 mt-2 px-3">
+  @for (item of this.categories; track $index) {
+      <div class="col-12">
+        <div 
+          class="custom-card p-4 text-white rounded-4 shadow-sm position-relative overflow-hidden cursor-pointer"
+          (click)="this.seeProduct(item.products)">
+          
+          <div class="card-bg-pattern"></div>
+          
+          <div class="card-content position-relative z-1">
+            <h3 class="fw-bold mb-2 fs-1">{{ item.name }}</h3>
+          </div>
+
+        </div>
+      </div>
+  }
+</div>
+
+
 </div>

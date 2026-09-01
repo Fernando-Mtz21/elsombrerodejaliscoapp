@@ -24,7 +24,7 @@ export class MainContainer implements OnInit, OnDestroy {
   minutesForHh: string = '00';
   secondsForHh: string = '00';
   timeForHH: string = '00:00:00';
-  left: string = 'HAPPY HOUR LEFT';
+  left: string = 'LEFT FOR HAPPY HOUR';
   nextHH: Date | null = null;
 
   intervalId: any;
@@ -44,20 +44,19 @@ export class MainContainer implements OnInit, OnDestroy {
     },
     error: (err) => console.error(err)
   });
+this.spinnerService.show();
+this.hhservice.ngOnInit();
 
-
-    this.spinnerService.show();
-    this.hhservice.ngOnInit();
-    this.hhservice.timeForHappyHour.subscribe((value) => {
-     if (value === '00:00:00') {
-      this.timeForHH = '¡Happy Hour!';
-      this.left = '';
-    } else {
-      this.timeForHH = value;
-      this.left = 'HAPPY HOUR LEFT';
-    }
-    this.cdr.detectChanges();
-    });
+this.hhservice.timeForHappyHour.subscribe((value) => {
+  if (value === '00:00:00') {
+    this.timeForHH = '¡Happy Hour!';
+    this.left = '';
+  } else {
+    this.timeForHH = this.formatTimeWithDays(value);
+    this.left = 'HAPPY HOUR LEFT';
+  }
+  this.cdr.detectChanges();
+});
 
     this.menuService.getMenu().subscribe({
       next: (menu) => {
@@ -117,4 +116,27 @@ export class MainContainer implements OnInit, OnDestroy {
     'https://www.elsombrerodejalisco.com/images/camara/carrusel/4.jpg',
     'https://www.elsombrerodejalisco.com/images/camara/carrusel/5.jpg',
   ];
+
+  formatTimeWithDays(timeStr: string): string {
+  if (!timeStr) return '';
+
+  const [hoursStr, minutesStr, secondsStr] = timeStr.split(':');
+
+  const totalHours = parseInt(hoursStr, 10) || 0;
+  const minutes = parseInt(minutesStr, 10) || 0;
+  const seconds = parseInt(secondsStr, 10) || 0;
+
+  const days = Math.floor(totalHours / 24);
+  const remainingHours = totalHours % 24;
+
+  if (days > 0) {
+    const dayLabel = days === 1 ? '1 Day' : `${days} Days`;
+        if (remainingHours === 0 && minutes === 0 && seconds === 0) {
+      return dayLabel;
+    }
+    const pad = (num: number) => num.toString().padStart(2, '0');
+    return `${dayLabel} ${pad(remainingHours)}:${pad(minutes)}:${pad(seconds)}`;
+  }
+  return timeStr;
+}
 }

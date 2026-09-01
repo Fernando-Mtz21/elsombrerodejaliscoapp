@@ -1,7 +1,8 @@
 <div class="body pt-4">
-  <div class="d-flex justify-content-start align-items-center w-100 mb-3">
-    <h2 class="ms-3">My Favorites</h2>
-  </div>
+<div class="text-center w-100 my-4">
+  <h2 class="fw-bold text-dark fs-2 mb-1">Favorites</h2>
+  <div class="bg-primary mx-auto rounded-pill" style="width: 40px; height: 4px;"></div>
+</div>
 
   @if (!loading && favProducts.length === 0) {
     <div class="d-flex flex-column justify-content-center align-items-center mt-5">
@@ -10,16 +11,20 @@
     </div>
   }
 
-  <div class="d-flex justify-content-center align-items-center row pb-6">
-    @for (item of favProducts; track item.idProduct) {
-      <div
-        class="menu-containter col-12 m-2 p-1 d-flex justify-content-center align-items-center rounded"
-        (click)="seeProduct(item)"
-      >
-        <h1>{{ item.name }}</h1>
+<div class="row justify-content-center g-3 mt-2 px-3 pb-6">
+  @for (item of favProducts; track item.idProduct) {
+    <div class="col-12">
+      <div 
+        class="custom-card p-4 text-white rounded-4 shadow-sm position-relative overflow-hidden cursor-pointer"
+        (click)="seeProduct(item)">
+        <div class="card-bg-pattern"></div> 
+        <div class="card-content position-relative z-1">
+          <h3 class="fw-bold mb-2 fs-1">{{ item.name }}</h3>
+        </div>
       </div>
-    }
-  </div>
+    </div>
+  }
+</div>
 </div>
 
 <p-dialog

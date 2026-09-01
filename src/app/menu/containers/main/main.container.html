@@ -1,4 +1,4 @@
-<div class="body pt-4">
+<div class="body">
   <div class="hh-card" (click)="goToMargaritas()" style="cursor: pointer;">
     <div class="hh-overlay"></div>
     <div class="hh-content">
@@ -9,10 +9,29 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-center gap-3 my-4 px-3">
-    <button class="btn-action">BOOK A TABLE</button>
-    <button class="btn-action" (click)="goToBar()">BAR</button>
+  <div class="container my-4 px-3">
+  <div class="row g-3 justify-content-center">
+    
+    <div class="col-12 col-sm-6 col-md-5">
+      <div class="card card-action h-100 shadow-sm border-0 text-center p-4 cursor-pointer">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-calendar-check display-6 mb-3 text-primary"></i>
+          <h5 class="card-title fw-bold m-0">BOOK A TABLE</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-5">
+      <div class="card card-action h-100 shadow-sm border-0 text-center p-4 cursor-pointer" (click)="goToBar()">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-cup-straw display-6 mb-3 text-primary"></i>
+          <h5 class="card-title fw-bold m-0">BAR</h5>
+        </div>
+      </div>
+    </div>
+
   </div>
+</div>
 
   <p-carousel 
     [value]="images" 
@@ -28,15 +47,31 @@
     </ng-template>
   </p-carousel>
 
-  <div class="d-flex justify-content-center align-items-center row mt-4">
-    @for (item of this.menu; track $index) {
-      <div class="img-container col-12 m-2 p-1" (click)="this.seeProducts(item.categories)">
-        <div class="img-hover-zoom bg-image d-flex justify-content-center align-items-center rounded background-button-image">
-          <h1 class="img-text">{{ item.name }}</h1>
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="title">{{ labels.message2 }}</h1>
+      <p class="description">
+        {{ labels.message1 }}
+      </p>
+    </div>
+  </div>
+
+<div class="row justify-content-center g-3 mt-2 px-3">
+  @for (item of this.menu; track $index) {
+    <div class="col-12">
+      <div 
+        class="custom-card p-4 text-white rounded-4 shadow-sm position-relative overflow-hidden cursor-pointer"
+        (click)="this.seeProducts(item.categories)">
+        <div class="card-bg-pattern"></div>
+        <div class="card-content position-relative z-1">
+        <h3 class="fw-bold mb-2 fs-1">{{ item.name }}</h3>
+        <p class="fw-bold mb-2 fs-6">{{ item.description }}</p>
         </div>
       </div>
-    }
-  </div>
+    </div>
+  }
+</div>
 
   <br>
 

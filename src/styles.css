@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html {
    background-color: #FAF3E0; 
-
 }
 
 body {
@@ -16,4 +15,42 @@ body {
 
 .p-card .p-card-content {
   padding: 0;
+}
+
+.custom-card {
+  min-height: 120px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+background: var(--bg-gradient, linear-gradient(135deg, #ff8c00 0%, #e14641 100%));
+}
+.custom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Patrón abstracto geométrico en el fondo */
+.card-bg-pattern {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.card-bg-pattern::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
 }
