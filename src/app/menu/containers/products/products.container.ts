@@ -35,7 +35,7 @@ export class ProductsContainer {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
 let selected = shuffled.slice(0, 5);
-    while (selected.length < 3 && this.products.length > 0) {
+    while (selected.length < 2 && this.products.length > 0) {
     const randomIndex = Math.floor(Math.random() * this.products.length);
     const candidate = this.products[randomIndex];
  if (!selected.includes(candidate) || this.products.length < 3) {

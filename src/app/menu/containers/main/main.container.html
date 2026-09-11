@@ -3,34 +3,29 @@
     <div class="hh-overlay"></div>
     <div class="hh-content">
       <div class="hh-timer-wrapper">
-        <h1 class="hh-countdown blink">{{ timeForHH }}</h1>
+        <h1 class="hh-countdown">{{ timeForHH }}</h1>
         <h3 class="hh-subtext">{{ left }}</h3>
       </div>
     </div>
   </div>
 
   <div class="container my-4 px-3">
-  <div class="row g-3 justify-content-center">
+<div class="container my-4">
+  <div class="d-flex flex-column gap-3 align-items-center">
     
-    <div class="col-12 col-sm-6 col-md-5">
-      <div class="card card-action h-100 shadow-sm border-0 text-center p-4 cursor-pointer">
-        <div class="card-body d-flex flex-column justify-content-center align-items-center">
-          <i class="bi bi-calendar-check display-6 mb-3 text-primary"></i>
-          <h5 class="card-title fw-bold m-0">BOOK A TABLE</h5>
-        </div>
+    <div class="skew-btn-wrapper shadow-sm cursor-pointer">
+      <div class="skew-btn-content d-flex align-items-center justify-content-center">
+        <span class="fw-bold fs-5 text-uppercase">Book a table</span>
       </div>
     </div>
-
-    <div class="col-12 col-sm-6 col-md-5">
-      <div class="card card-action h-100 shadow-sm border-0 text-center p-4 cursor-pointer" (click)="goToBar()">
-        <div class="card-body d-flex flex-column justify-content-center align-items-center">
-          <i class="bi bi-cup-straw display-6 mb-3 text-primary"></i>
-          <h5 class="card-title fw-bold m-0">BAR</h5>
-        </div>
+    <div class="skew-btn-wrapper shadow-sm cursor-pointer" (click)="goToBar()">
+      <div class="skew-btn-content d-flex align-items-center justify-content-center">
+        <span class="fw-bold fs-5 text-uppercase">Bar</span>
       </div>
     </div>
 
   </div>
+</div>
 </div>
 
   <p-carousel 
@@ -50,9 +45,9 @@
   <div class="hero">
     <div class="overlay"></div>
     <div class="content">
-      <h1 class="title">{{ labels.message2 }}</h1>
+      <h1 class="title">{{ labels.message1 }}</h1>
       <p class="description">
-        {{ labels.message1 }}
+        {{ labels.message2 }}
       </p>
     </div>
   </div>
@@ -78,9 +73,9 @@
   <div class="hero">
     <div class="overlay"></div>
     <div class="content">
-      <h1 class="title">{{ labels.message2 }}</h1>
+      <h1 class="title">{{ labels.message3 }}</h1>
       <p class="description">
-        {{ labels.message1 }}
+        {{ labels.message4 }}
       </p>
       <button class="btn-primary">CALL US</button>
     </div>
