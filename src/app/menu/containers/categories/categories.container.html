@@ -4,13 +4,23 @@
       <i class="bi bi-arrow-left"></i>
     </button>
   </div>
+<br>
 
 <div class="product-card">
-  <div class="image-container">
-    @for (item of this.categories; track $index) {
-      @if (item.description && item.description.trim() !== '') {
-        <div class="category-item">
-          <h1>{{item.description}}</h1>
+  <div class="info-banners">
+    @for (item of categories; track item.id || $index) {
+      @if (item.description?.trim()) {
+        <div class="info-card">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <div class="info-content">
+            <p class="info-text">{{ item.description }}</p>
+          </div>
         </div>
       }
     }

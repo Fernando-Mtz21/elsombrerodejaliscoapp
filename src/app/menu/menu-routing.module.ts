@@ -4,6 +4,7 @@ import { MainContainer } from './containers/main/main.container';
 import { ProductsContainer } from './containers/products/products.container';
 import { CategoriesContainer } from './containers/categories/categories.container';
 import { FaqContainer } from './containers/faq/faq.container';
+import { bookatContainer } from './containers/bookatable/bookat.container';
 import { FavoritesContainer } from './containers/favorites/favorites.container';
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'Faq',
     component: FaqContainer,
+  },
+    {
+    path: 'Bookatable',
+    component: bookatContainer,
   },
   {
     path: 'Favorites',

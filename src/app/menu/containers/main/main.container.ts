@@ -26,6 +26,8 @@ export class MainContainer implements OnInit, OnDestroy {
   timeForHH: string = '00:00:00';
   left: string = 'LEFT FOR HAPPY HOUR';
   nextHH: Date | null = null;
+  totalImages = 5;
+  baseUrl = 'https://www.elsombrerodejalisco.com/images/camara/carrusel/';
 
   intervalId: any;
 
@@ -109,13 +111,10 @@ this.hhservice.timeForHappyHour.subscribe((value) => {
     }
   }
 
-    images: string[] = [
-    'https://www.elsombrerodejalisco.com/images/camara/carrusel/1.jpg',
-    'https://www.elsombrerodejalisco.com/images/camara/carrusel/2.jpg',
-    'https://www.elsombrerodejalisco.com/images/camara/carrusel/3.jpg',
-    'https://www.elsombrerodejalisco.com/images/camara/carrusel/4.jpg',
-    'https://www.elsombrerodejalisco.com/images/camara/carrusel/5.jpg',
-  ];
+images: string[] = Array.from({ length: this.totalImages }, (_, i) => i + 1)
+  .sort(() => Math.random() - 0.5)
+  .map(num => `${this.baseUrl}${num}.jpg`);
+  
 
   formatTimeWithDays(timeStr: string): string {
   if (!timeStr) return '';
