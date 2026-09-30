@@ -61,6 +61,14 @@ background-color: #ef9153;
 border-radius: 16px !important;
 }
 
+:host ::ng-deep .p-carousel-items-content {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 16px;
+    margin: 15px;
+ } 
+
+
 :host ::ng-deep .p-carousel-indicators .p-carousel-indicator button {
   width: 12px;
   height: 12px;
