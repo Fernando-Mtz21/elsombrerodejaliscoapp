@@ -5,6 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { PushService } from '@services/push.service';
 import { SpinnerService } from '@services/spinner.service';
 
 @Component({
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private changeDetectionRef: ChangeDetectorRef,
+    private pushService: PushService,
     private spinnerService: SpinnerService,
     private translateService: TranslateService
   ) {}
@@ -41,5 +43,7 @@ export class AppComponent implements OnInit {
       this.translateService.setDefaultLang(languageCode);
       this.translateService.use(languageCode);
     }
+
+    this.pushService.init();
   }
 }

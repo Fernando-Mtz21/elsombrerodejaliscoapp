@@ -1,9 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.example.app',
-  appName: 'El sombrero',
-  webDir: 'dist'
+  appId: 'com.elsombrerodejalisco.app',
+  appName: 'El Sombrero de Jalisco',
+  webDir: 'dist/angular-base-template/browser',
 };
 
 export default config;

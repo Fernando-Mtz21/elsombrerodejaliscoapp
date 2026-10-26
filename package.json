@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:android": "ng build && npx cap sync android",
+    "open:android": "npx cap open android",
+    "build:ios": "ng build && npx cap sync ios",
+    "open:ios": "npx cap open ios",
+    "assets:generate": "node scripts/prepare-icon.mjs && npx capacitor-assets generate --android --ios"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +46,7 @@
     "@angular/cli": "^17.3.7",
     "@angular/compiler-cli": "^17.3.0",
     "@angular/localize": "^17.3.12",
+    "@capacitor/assets": "^3.0.5",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
