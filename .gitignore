@@ -3,15 +3,17 @@
 .angular/**
 .claude/
 android/
+android/**
 ios/
 *.docx
+node_modules/
 
 # Alternativa fuerte
 */.angular/
 */.angular/**
+*/android/
+*/android/**
 
-# Node Modules
-node_modules/
 
 # Build output
 dist/
